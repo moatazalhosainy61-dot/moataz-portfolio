@@ -1,19 +1,271 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Moataz Abdelsalam — Portfolio</title>
-<link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="container header-inner"><div class="logo">Moataz Abdelsalam</div>
-<button id="menu-toggle" class="menu-toggle">☰</button>
-<nav id="site-nav" class="site-nav"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#certificates">Certificates</a><a href="#data-projects">Data Projects</a><a href="#design-projects">Graphic Projects</a><a href="#contact">Contact</a></nav></div></header>
-<main>
-<section id="home" class="hero"><div class="container hero-grid"><div class="hero-text"><h1 class="big-name">Moataz Abdelsalam</h1><p class="subtitle">Data Analyst &amp; Graphic Designer</p><p class="lead">Transforming raw data into insights and visuals. Experienced with Excel, SQL, Power BI and creative design tools.</p><a class="btn btn-gold" href="moataz cv.pdf" download>Download CV</a></div><div class="hero-photo" id="photo-slot"><div class="photo-placeholder">Add profile.jpg later</div></div></div></section>
-<section id="about" class="section dark-section"><div class="container"><h2>About Me</h2><p>I’m a passionate <strong>Data Analyst and Graphic Designer</strong> with hands-on experience in Excel, SQL, and Power BI. I enjoy turning raw data into actionable insights and presenting them through clear dashboards and visuals. Alongside analytics, I design professional visuals using Photoshop, Illustrator, and Canva. I’m continually learning new tools and techniques to deliver creative, data-driven results.</p></div></section>
-<section id="skills" class="section"><div class="container"><h2>Skills</h2><div class="skills-grid"><div class="skill">Excel</div><div class="skill">SQL</div><div class="skill">Power BI</div><div class="skill">Python (Pandas)</div><div class="skill">Data Visualization</div><div class="skill">Photoshop</div><div class="skill">Illustrator</div><div class="skill">Canva</div><div class="skill">Critical Thinking</div></div></div></section>
-<section id="certificates" class="section dark-section"><div class="container"><h2>Certificates</h2><div id="certificates-grid" class="gallery-grid"><div class="empty-note">Certificates will be added here later.</div></div></div></section>
-<section id="data-projects" class="section"><div class="container"><h2>Data Analysis Projects</h2><div id="data-gallery" class="gallery-grid"></div></div></section>
-<section id="design-projects" class="section dark-section"><div class="container"><h2>Graphic Design Projects</h2><div id="design-gallery" class="gallery-grid"><div class="empty-note">Graphic projects will appear here.</div></div></div></section>
-<section id="contact" class="section"><div class="container contact-grid"><div><h2>Contact Me</h2><p>📍 Cairo, Egypt</p><p>📱 01099807171 / 01060750300</p><p>📧 <a href="mailto:moatazalhosainy61@gmail.com">moatazalhosainy61@gmail.com</a></p><p>💼 <a href="https://www.linkedin.com/in/moataz-abdelsalam-1a6270306" target="_blank">LinkedIn</a></p><p>📸 <a href="https://www.instagram.com/moataz_a_alhosainy" target="_blank">Instagram</a></p></div><div class="contact-form-box"><h3>Quick Info</h3><p>To add projects or certificates later: drop images into the corresponding folder under <code>projects/</code>.</p></div></div></section>
-</main>
-<div id="image-modal" class="modal"><span class="modal-close" id="modal-close">&times;</span><img class="modal-content" id="modal-img" alt="Project view"></div>
-<footer class="site-footer"><div class="container"><p>© 2025 Moataz Abdelsalam. All Rights Reserved.</p></div></footer>
-<script src="script.js"></script></body></html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Moataz Abdelsalam — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      scroll-margin-top: 80px;
+    }
+    .cert-card, .project-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .cert-card:hover, .project-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border-color: #d4af37;
+    }
+    .cert-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cert-info, .project-info {
+      padding: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(212, 175, 55, 0.2);
+      color: #d4af37;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Moataz Abdelsalam</div>
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 class="big-name">Moataz Abdelsalam</h1>
+          <p class="subtitle">Data Analyst &amp; UI/UX Designer</p>
+          <p class="lead">Computer Science student passionate about turning complex data into actionable insights, interactive dashboards, and user-centered digital designs.</p>
+          <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+            <a class="btn btn-gold" href="moataz_cv.pdf" download id="cv-btn">Download CV</a>
+            <a class="btn" href="#contact" style="border: 1px solid #d4af37; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-photo" id="photo-slot">
+          <img src="IMG_profile.jpeg" alt="Moataz Abdelsalam" style="width: 100%; max-width: 280px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.4); object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section dark-section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8;">
+          I am a <strong>Computer Science student at Nahda University</strong> (Expected May 2027) with a strong passion for <strong>Data Analysis, Artificial Intelligence, and UI/UX Design</strong>.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-top: 10px;">
+          As a Data Analysis Trainee at the <strong>Digital Egypt Pioneers Initiative (DEPI)</strong> and an alumna of the <strong>CIB Summer Internship in Generative AI</strong>, I specialize in analyzing real-world datasets, extracting KPI metrics, and building interactive business intelligence dashboards using SQL, Python, and Power BI. Alongside analytics, I craft modern user interfaces and prototypes using Figma.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Technical Skills</h2>
+
+        <h3 style="margin-top: 25px; margin-bottom: 15px; color: #d4af37;">📊 Data Analytics &amp; Programming</h3>
+        <div class="skills-grid">
+          <div class="skill">Python (Pandas, NumPy, Matplotlib)</div>
+          <div class="skill">SQL (Queries, Joins, Aggregations)</div>
+          <div class="skill">Power BI &amp; Interactive Dashboards</div>
+          <div class="skill">Tableau</div>
+          <div class="skill">Advanced Excel (Pivot Tables, VLOOKUP)</div>
+          <div class="skill">Data Warehousing &amp; ETL Processes</div>
+          <div class="skill">Statistical Analysis &amp; A/B Testing</div>
+          <div class="skill">R Programming</div>
+        </div>
+
+        <h3 style="margin-top: 35px; margin-bottom: 15px; color: #d4af37;">🤖 AI &amp; UI/UX Design</h3>
+        <div class="skills-grid">
+          <div class="skill">Generative AI &amp; Prompt Engineering</div>
+          <div class="skill">Machine Learning Basics</div>
+          <div class="skill">Figma (UI Design &amp; Prototyping)</div>
+          <div class="skill">User Research &amp; Wireframing</div>
+          <div class="skill">Design Systems</div>
+          <div class="skill">Web Programming (Python &amp; JavaScript)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section dark-section">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          
+          <!-- Project 1 -->
+          <div class="project-box">
+            <div class="project-info">
+              <span class="badge">Power BI</span>
+              <h3 style="margin: 5px 0 10px;">Sales Dashboard Project</h3>
+              <p>Built a dynamic, interactive business dashboard visualizing sales performance, revenue growth, and key KPI metrics across diverse regional markets.</p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-box">
+            <div class="project-info">
+              <span class="badge">SQL &amp; Database</span>
+              <h3 style="margin: 5px 0 10px;">SQL Data Analysis Project</h3>
+              <p>Queried and analyzed complex relational databases to identify customer behavior trends, business bottlenecks, and revenue optimization opportunities.</p>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-box">
+            <div class="project-info">
+              <span class="badge">Python</span>
+              <h3 style="margin: 5px 0 10px;">Python Data Cleaning &amp; EDA</h3>
+              <p>Cleaned, transformed, and performed exploratory data analysis on raw unorganized datasets using Pandas, NumPy, and Matplotlib.</p>
+            </div>
+          </div>
+
+          <!-- Project 4 (UI/UX) -->
+          <div class="project-box">
+            <div class="project-info">
+              <span class="badge">UI/UX &amp; Figma</span>
+              <h3 style="margin: 5px 0 10px;">User Experience &amp; Interface Design</h3>
+              <p>Designed responsive web and mobile application prototypes focusing on seamless user journeys, accessibility, and modern design systems.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+      <div class="container">
+        <h2>Certificates &amp; Achievements</h2>
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 25px; margin-top: 25px;">
+          
+          <!-- Certificate 1: DEPI -->
+          <div class="cert-card">
+            <img src="cert1.jpg" alt="DEPI Microsoft Power BI Specialist" class="cert-img" onclick="openModal(this)">
+            <div class="cert-info">
+              <span class="badge">MCIT • DEPI</span>
+              <h3 style="font-size: 1.1rem; margin: 5px 0;">Microsoft Power BI Specialist</h3>
+              <p style="font-size: 0.9rem; color: #bbb;">Digital Egypt Pioneers Initiative (DEPI) in partnership with eyouth &amp; Berlitz.</p>
+            </div>
+          </div>
+
+          <!-- Certificate 2: AI Advanced -->
+          <div class="cert-card">
+            <img src="cert2.jpg" alt="AI Advanced - Microsoft & MCIT" class="cert-img" onclick="openModal(this)">
+            <div class="cert-info">
+              <span class="badge">Microsoft • MCIT</span>
+              <h3 style="font-size: 1.1rem; margin: 5px 0;">AI Advanced Certificate</h3>
+              <p style="font-size: 0.9rem; color: #bbb;">AI Empower Yourself Program delivered by Fast Lane and Microsoft Egypt.</p>
+            </div>
+          </div>
+
+          <!-- Certificate 3: CIB -->
+          <div class="cert-card">
+            <img src="cert3.jpg" alt="Generative AI - CIB Internship" class="cert-img" onclick="openModal(this)">
+            <div class="cert-info">
+              <span class="badge">CIB Bank Internship</span>
+              <h3 style="font-size: 1.1rem; margin: 5px 0;">Generative AI Principles</h3>
+              <p style="font-size: 0.9rem; color: #bbb;">Principles, approaches, and best practices of Generative AI (CIB Summer Program).</p>
+            </div>
+          </div>
+
+          <!-- Certificate 4: Harvard CS50W -->
+          <div class="cert-card">
+            <img src="cert4.jpg" alt="Harvard CS50W" class="cert-img" onclick="openModal(this)">
+            <div class="cert-info">
+              <span class="badge">HarvardX • edX</span>
+              <h3 style="font-size: 1.1rem; margin: 5px 0;">CS50W: Web Programming</h3>
+              <p style="font-size: 0.9rem; color: #bbb;">Web Programming with Python and JavaScript offered by Harvard University.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section dark-section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact Me</h2>
+          <p>📍 Cairo, Egypt</p>
+          <p>📱 +20 109 980 7171 / 01060750300</p>
+          <p>📧 <a href="mailto:moatazalhosainy61@gmail.com">moatazalhosainy61@gmail.com</a></p>
+          <p>💼 <a href="https://linkedin.com/in/moataz-abdelsalam-1a6270306" target="_blank">LinkedIn Profile</a></p>
+          <p>📸 <a href="https://www.instagram.com/moataz_a_alhosainy" target="_blank">Instagram Profile</a></p>
+        </div>
+        <div class="contact-form-box">
+          <h3>Let's Connect!</h3>
+          <p>I am seeking internships and entry-level opportunities in <strong>Data Analysis, Business Intelligence, and UI/UX Design</strong>. Feel free to contact me for collaborations or freelance projects.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for viewing certificate images in full size -->
+  <div id="image-modal" class="modal" onclick="closeModal()">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Certificate Preview">
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Moataz Abdelsalam Mohamed Hossain. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // وظيفة تكبير صور الشهادات عند الضغط عليها
+    function openModal(imgElement) {
+      var modal = document.getElementById("image-modal");
+      var modalImg = document.getElementById("modal-img");
+      modal.style.display = "block";
+      modalImg.src = imgElement.src;
+    }
+    function closeModal() {
+      document.getElementById("image-modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
